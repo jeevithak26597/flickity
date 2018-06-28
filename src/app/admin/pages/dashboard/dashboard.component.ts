@@ -2,15 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { EventService } from "../../event.service";
 import { HttpClientModule } from '@angular/common/http'; 
 import { HttpModule } from '@angular/http';
-// import { EventtileComponent } from '../../../commonislot/pages/eventtile/eventtile.component';
-@Component({
+ import { EventtileComponent } from '../../../commonislot/pages/eventtile/eventtile.component';
+
+import { Router } from "@angular/router";
+ @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   providers:[EventService],
 })
   export class DashboardComponent {
-    event;
+  router;
+  event;
     recentevents;
     recentcontent;
     upcomingevents;
@@ -18,7 +21,8 @@ import { HttpModule } from '@angular/http';
   //  dd= this.today.getDate();
   //  mm = this.today.getMonth() + 1; 
   //  yyyy = this.today.getFullYear();
-  constructor(public eventService: EventService) {
+  constructor(public eventService: EventService,public r: Router) {
+    this.router=r;
     this.recentcontent=[];
     this.eventService.fetchData();
     this.event=this.eventService.data;
@@ -42,8 +46,9 @@ import { HttpModule } from '@angular/http';
   }
   details(obj,key){
     // console.log(key);
+  
     this.eventService.setCurrentObj(obj,key);
-    
+    this.router.navigate(['admin/eventdisplay']);
   }
   
 }

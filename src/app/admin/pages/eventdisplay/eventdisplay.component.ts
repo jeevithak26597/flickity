@@ -17,7 +17,7 @@ eventData;
 slotData;
 totalNumber;
 intercount;
-  constructor(private eventService:EventService) { 
+  constructor(private eventService:EventService,public httpService:Http) { 
     this.eventData = this.eventService.getCurrentObj();
     this.slotData=this.eventData.slots;
     console.log(this.slotData);
@@ -33,11 +33,20 @@ intercount;
     }
   }
   updateCount(slot,inti,count){
-  console.log(slot);
-  console.log(inti);
-  console.log(count);
+  this.slotData[slot].interviewers[inti].noOfInterviews=count;
+  console.log(this.slotData[slot].interviewers[inti].noOfInterviews);
+      
   }
-
+  closeEvent(){
+  let key=this.eventService.getCurrentKey;
+  var url='https://islot-34ffe.firebaseio.com/events';
+  console.log(JSON.stringify({slots:this.slotData}));
+  this.httpService.patch(url+"/"+key+".json",JSON.stringify({
+    slots: this.slotData
+  })).subscribe(res=>{
+      console.log(res.json);
+  });
+}
   ngOnInit() {
   }
   valchange(event){
