@@ -10,7 +10,7 @@
     <span *ngFor="let event of recentevents;let i=index"  (click)="details(event,event.key)">
         <div *ngIf="i<5">
     <div class="square-service-block" id="changeheight" >
-        <a href="/admin/eventdisplay">
+        <a>
           <!-- <h4 class="ssb-title" id=recenttitleid>{{event.name}}</h4>  
           <h4 class="ssb-title" id=recenttitleid>{{event.startTime}}</h4>   -->
           <app-eventtile [eventInfo]="event"></app-eventtile>
@@ -35,7 +35,7 @@
         <div class="col-md-3" id=upcommingid>
     <span *ngFor="let event of upcomingevents"  (click)="details(event,event.key)">
             <div class="square-service-block" >
-                <a href="/admin/eventdisplay">
+                <a>
                   <!-- <h4 class="ssb-title" id=upcommingtitleid>{{event.name}}</h4>  
                   <h4 class="ssb-title" id=upcommingtitleid>{{event.starttime}}</h4>   -->
                   <app-eventtile [eventInfo]="event"></app-eventtile>

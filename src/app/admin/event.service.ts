@@ -6,7 +6,7 @@ var currentObj;
 var currentKey;
 @Injectable()
 export class EventService {
-  url = 'https://islot-34ffe.firebaseio.com/finalevents.json';
+  url = 'https://project-islot.firebaseio.com/events.json';
   data;
   today = new Date();
   upcomingevent;
