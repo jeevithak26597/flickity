@@ -40,10 +40,10 @@ import { HttpModule } from '@angular/http';
      this.recentcontent.push(this.recentevents[i]);
    }
   }
-  details(eventobj){
-    this.eventService.particulareventdata=eventobj;
-    console.log(eventobj);
-  }
+  details(obj,key){
+    // console.log(key);
+    this.eventService.setCurrentObj(obj,key);
+    
   }
   
-  
+}
