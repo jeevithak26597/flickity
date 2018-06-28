@@ -44,19 +44,19 @@ export class RegisterComponent implements OnInit {
          const location=this.idformgroup.get('location').value;
          const employeeid=this.idformgroup.get('employeeid').value;
          const role=this.idformgroup.get('role').value;
-      // var userobject=new User( 10,"ram","abc@gmail.com",999999999,"admin","chennai",[]);  \
-         if(role==="Interviewer")
-          { 
+      //var userobject=new User( 10,"ram","abc@gmail.com",999999999,"admin","chennai",[]);  \
+        //  if(role==="Interviewer")
+        //   { 
         
-          this.service.fetchdata().subscribe((rsp)=>{
-                 this.data=rsp.json();
-                 for(let key in this.data){
+        //   this.service.fetchdata().subscribe((rsp)=>{
+        //          this.data=rsp.json();
+        //          for(let key in this.data){
                 
-                  this.dataArr.push(this.data[key].name)
-                 }
-                console.log(this.dataArr)
-                });
-          }
+        //           this.dataArr.push(this.data[key].name)
+        //          }
+        //         console.log(this.dataArr)
+        //         });
+        //   }
 
        const userModel:UserModel = new UserModel(employeeid,name,mailid,phonenumber,"admin",location,[],password);
       
