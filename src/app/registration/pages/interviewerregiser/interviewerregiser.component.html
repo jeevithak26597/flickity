@@ -1,0 +1,101 @@
+
+  <div id="widthheight" >
+    <form novalidate [formGroup]="idformgroup">
+        <div class=" row">
+            <label for="Employeeid" class="col-sm-2 col-form-label">Employeeid</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="employeeid" onkeypress="return (event.charCode > 47 && 
+            event.charCode < 58) || (event.charCode === 8) || (event.charCode === 32)" formControlName="employeeid">
+            </div>
+          </div>
+          <div class="form-group-row"><span *ngIf="idformgroup.get('employeeid').touched && idformgroup.get('employeeid').errors">Please provide valid employeeid</span>
+          </div>
+          <br>
+    <div class="row">
+      <label for="name"  class="col-sm-2 col-form-label">Interviewer Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" formControlName="name">
+      </div>
+    </div>
+    <div class="form-group-row"><span *ngIf="idformgroup.get('name').touched && idformgroup.get('name').errors">Please provide your name</span>
+    </div>
+    <br>
+    <div class=" row">
+      <label for="email" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="email" formControlName="mailid">
+      </div>
+    </div>
+    <div class="form-group-row"><span *ngIf="idformgroup.get('mailid').touched && idformgroup.get('mailid').errors">Please provide valid mailid</span>
+    </div>
+    <br>
+    <div class="row">
+        <label for="password"  class="col-sm-2 col-form-label">Set Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="password" formControlName="password">
+        </div>
+      </div>
+      <div class="form-group-row"><span *ngIf="idformgroup.get('password').touched && idformgroup.get('password').errors">Please provide your password</span>
+      </div>
+    <br>
+     <div class=" row">
+      <label for="phonenumber" class="col-sm-2 col-form-label">Phone Number</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="phonenumber" onkeypress="return (event.charCode > 47 && 
+      event.charCode < 58) || (event.charCode === 8) || (event.charCode === 32)" formControlName="phonenumber">
+      </div>
+    </div>
+    <div class="form-group-row"><span *ngIf="idformgroup.get('phonenumber').touched && idformgroup.get('phonenumber').errors">Please provide your phonenumber</span>
+    </div>
+    <br> 
+
+     <!-- <span class="asd">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="admin" value="admin" formControlName="">
+      <label class="form-check-label" for="admin">
+        Admin
+      </label>
+    </span>
+    <span class="asd">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="interviewer" value="interviewer" formControlName="" >
+      <label class="form-check-label" for="interviewer">
+        Interviewer
+      </label>
+    </span> -->
+    <br>
+    <br>
+    <div class=" row" id="locationdetails">
+      <label for="Location" class="col-sm-2 col-form-label">Location</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="location" formControlName="location">
+                          <option>Chennai</option>
+                          <option>Hyderabad</option>
+                          <option>Bengaluru</option>
+                          <option>Pune</option>
+                        
+                        </select>
+      </div>
+    </div>
+    <br>
+    <label for="Employeeid" class="col-sm-2 col-form-label">Skills</label>
+    <div *ngFor="let key of dataArr">
+   <div class="row" id="skills">
+    
+      <input type="ckeckbox" id="reduce">{{key}}
+     
+   </div>
+  </div>
+    <div class=" row">
+      <div class="col-sm-10">
+          
+        <button type="submit" class="btn btn-primary" [disabled]="idformgroup.invalid" (click)="onSave()">Register</button>
+      </div>
+    </div>
+    <br>
+ 
+  </form>
+
+ 
+  </div>
+  
+  
+  

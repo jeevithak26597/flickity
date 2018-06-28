@@ -1,0 +1,56 @@
+ <!-- <div class=eventCreation> -->
+ <div class="container">
+ <fieldset>
+        <legend>Drive Registration Form</legend>
+  <form novalidate [formGroup]="regFormGroup" >
+     <label for="firstname" id="lfname">Name</label>
+     <input type="text" class="form-control" name="firstname" id="firstname" formControlName="eventName">
+     <i class="glyphicon glyphicon-remove form-control-feedback" *ngIf="regFormGroup.get('eventName').touched && regFormGroup.get('eventName').errors"
+       id="firstError"></i>
+     <i class="glyphicon glyphicon-ok form-control-feedback" id="firstError" *ngIf="regFormGroup.get('eventName').touched && !regFormGroup.get('eventName').errors"></i>
+   <br>
+   <span id="eventNameError" class="alert alert-danger" *ngIf="regFormGroup.get('eventName').touched && regFormGroup.get('eventName').errors">Please enter eventName</span>
+   <label for="joiningdate">Date</label>
+   <input type="date" class="form-control" id="date" #date (change)="check(date.value)" formControlName="date">
+   <span>{{errMessage}}</span>
+   <span id="dateError" class="alert alert-danger" *ngIf="regFormGroup.get('date').touched && regFormGroup.get('date').errors">Please enter date</span>
+   <br>
+   <br>
+   <label for="starttime">Start Time</label>
+   <input type="time" class="form-control" id="starttime" formControlName="starttime">
+   <span id="starttimeError" class="spanHide"></span>
+   <br>
+   <br>
+   <label for="endtime">End Time</label>
+   <input type="time" class="form-control" id="endtime" formControlName="endtime">
+   <span id="endtimeError" class="spanHide"></span>
+   <br>
+   <br>
+   <div class=skilllocation>
+     <label for="location">Location</label>
+     <select name="location" class="form-control" formControlName="location" id="location">
+       <option value="pune">pune</option>
+       <option value="chennai">chennai</option>
+       <option value="Hyderabad">Hyderabad</option>
+     </select>
+   <span id="locationerror" class="spanHide"></span>
+   <br>
+   <br>
+   <br>
+   <label for="Skill">Skill</label>
+   <select name="skill" class="form-control"  id="skill">
+     <option value=""></option>
+     <option value="Java Script">Java Script</option>
+     <option value="Angular">Angular</option>
+     <option value="React">React</option>
+   </select>
+   <span id="skillerror" class="spanHide"></span>
+  </div>
+<br>
+   <button type="submit" class="btn btn-success" id="submitting" [disabled]="regFormGroup.invalid" (click)="onCreateEvent()"><a href="/admin/dashboard"></a>Create Event</button>
+   <button type="reset" class="btn btn-success" id="resetting" [disabled]="regFormGroup.invalid" (click)="onSubmit()">reset</button>
+  <br>
+  <br>
+  </form>
+  </fieldset>
+ </div>

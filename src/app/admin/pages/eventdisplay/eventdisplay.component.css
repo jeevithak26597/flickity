@@ -1,0 +1,19 @@
+.container-fluid {
+    height: 300px;
+}
+.col-sm-4{
+    
+    text-align: center;
+    padding: 20px 0;
+}
+.row{
+    margin-top: 20px;
+    margin-bottom: 20px;
+   text-align: center;
+  
+}
+.border{
+    border: 1px solid black;
+    
+    
+}

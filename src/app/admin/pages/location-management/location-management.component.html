@@ -1,0 +1,12 @@
+
+<div class="container">
+    <input type="text" class="form-control"  placeholder="Add new location" #locationBox (keydown.enter)="addLocation(locationBox)">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6" *ngFor="let key of keys">
+        <div class="locationTile" >
+            <div class="deleteIcon">
+                <img src="" alt="delete" (click)='onDelete(key)'>
+            </div>
+            <input type="text" value="{{data[key].location}}" #locationEdit (change)="onUpdate(key,locationEdit)">    
+        </div>
+    </div>
+  </div>

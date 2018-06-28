@@ -1,0 +1,45 @@
+<form novalidate [formGroup]="idFormGroup" class="container">
+        <div id="iddiv">
+          <label for="firstname" id="lfname">First Name</label>
+          <input type="text" class="form-control" name="firstname" id="firstname" formControlName="firstName">
+          <i class="glyphicon glyphicon-remove form-control-feedback" *ngIf="idFormGroup.get('firstName').touched && idFormGroup.get('firstName').errors"
+            id="firstError"></i>
+          <i class="glyphicon glyphicon-ok form-control-feedback" id="firstError" *ngIf="idFormGroup.get('firstName').touched && !idFormGroup.get('firstName').errors"></i>
+        </div>
+        <br>
+        <span id="firstNameError" class="alert alert-danger" *ngIf="idFormGroup.get('firstName').touched && idFormGroup.get('firstName').errors">Please enter first name</span>
+        <label for="location">Location</label>
+        <select name="location" class="form-control"  id="location">
+          <option value="pune">pune</option>
+          <option value="chennai">chennai</option>
+          <option value="Hyderabad">Hyderabad</option>
+        </select>
+        <label for="Skill">Skill</label>
+        <select name="skill" class="form-control"  id="skill">
+          <option value="Java Script">Java Script</option>
+          <option value="Angular">Angular</option>
+          <option value="React">React</option>
+        </select>
+        <div id="iddiv">
+          <label for="email">email</label>
+          <input type="email" class="form-control" id="email" formControlName="emailId">
+          <i class="glyphicon glyphicon-remove form-control-feedback emailwrong"></i>
+          <i class="glyphicon glyphicon-ok form-control-feedback emailtick "></i>
+        </div>
+        <span id="emailIdError" class="alert alert-danger" *ngIf="idFormGroup.get('emailId').touched && idFormGroup.get('emailId').errors">Please enter email</span>
+        <br>
+        <div id="iddiv">
+            <label for="mobnum">Mobile Number</label>
+            <input type="text" class="form-control" id="mobnum" formControlName="contactNumber">
+            <i class="glyphicon glyphicon-remove form-control-feedback mobwrong"></i>
+            <i class="glyphicon glyphicon-ok form-control-feedback mobtick "></i>
+        </div>
+          <span id="contactNumberError" class="alert alert-danger" *ngIf="idFormGroup.get('contactNumber').touched && idFormGroup.get('contactNumber').errors">Please enter contactNumber</span>
+          <br>
+          <br>
+          <br>  
+        <button type="button" class="btn btn-success" id="submitting" [disabled]="idFormGroup.invalid" (click)="myFunction()">submit</button>
+      </form>
+      
+      
+    

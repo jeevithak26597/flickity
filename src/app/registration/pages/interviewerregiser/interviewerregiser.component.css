@@ -1,0 +1,31 @@
+body {
+    font-family: arial;
+  }
+  .hide {
+    display: none;
+  }
+    #widthheight
+    {
+        width:60%;
+        margin-left: 10%;
+        margin-top: 5%;
+    }
+    a{
+        color:white;
+    }
+    #id
+    {
+        height:100px;
+    }
+    #skills
+    {
+        font-family: arail;
+        font-size: 20px;
+        margin-left:20%;
+        font-weight:bold;
+    }
+
+    #reduce
+    {
+        width:100px;
+    }

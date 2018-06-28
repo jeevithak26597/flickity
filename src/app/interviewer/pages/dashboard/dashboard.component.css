@@ -1,0 +1,31 @@
+.col-sm-7 {
+    margin-top: 15%;
+}.col-sm-5 {
+    margin-top: 15%;
+}
+button#uce1 {
+    height: 50px;
+    width: 7%;
+    margin-left: 10%;
+}div#score {
+    border: 1px solid;
+    height: 350px;
+    width: 70%;
+    background-color: lightblue;
+}h2 {
+    margin-left: 20%;
+}
+.col-sm-2 {
+    margin-left: 18%;
+    margin-top: 10%;
+}h6 {
+    margin-left: 10%;
+}
+#a{
+    display:flex;
+}
+div#a {
+    margin-left: 25%;
+}
+
+

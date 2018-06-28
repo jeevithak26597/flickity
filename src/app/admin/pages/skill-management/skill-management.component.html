@@ -1,0 +1,12 @@
+
+<div class="container">
+  <input type="text" class="form-control"  placeholder="Add new skill" #skillBox (keydown.enter)="addSkill(skillBox)">
+  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6" *ngFor="let key of keys">
+      <div class="skillTile" >
+          <div class="delIcon">
+              <img src="" alt="delete" (click)='onDel(key)'>
+          </div>
+          <input type="text" value="{{data[key].skill}}" #skillEdit (change)="onUpdate(key,skillEdit)">    
+      </div>
+  </div>
+</div>

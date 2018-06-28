@@ -1,0 +1,92 @@
+<mat-tab-group>
+  <mat-tab label="VIEW">
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6 ">
+<div class="border">
+          <div class="row">
+            <div class="col-sm-4">slot timmings</div>
+            <div class="col-sm-4">
+              <div class="row" *ngFor="let Obj of contactArr">
+
+                <app-interviewer-contact [contactInfo]="Obj"></app-interviewer-contact>
+
+              </div>
+            </div>
+            <div class="col-sm-4">total number</div>
+          </div>
+        </div>
+
+        <div class="border">
+            <div class="row">
+              <div class="col-sm-4">slot timmings</div>
+              <div class="col-sm-4">
+                <div class="row" *ngFor="let Obj of contactArr">
+  
+                  <app-interviewer-contact [contactInfo]="Obj"></app-interviewer-contact>
+  
+                </div>
+              </div>
+              <div class="col-sm-4">total number</div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-lg-3"></div>
+      </div>
+    </div>
+
+  </mat-tab>
+
+
+
+  <mat-tab label="UPDATE">
+    <div class="container-fluid">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6" >
+        <div class="border" *ngFor="let event of eventSlots" >
+          <div class="row">{{event.startTime}}--{{event.endTime}}</div>
+          <div class="row "*ngFor="let interview of event.slotInterviewers">
+            <div class="col-sm-4">{{interview.name}}</div>
+            <div class="col-sm-4"><input type="text" class="form-control" value={{interview.noOfInterviewsTaken}}></div>
+            <div class="col-sm-4"><button type="button" class="btn btn-primary">approve</button></div>
+
+          </div>
+        </div>
+        
+<!-- 
+        <div class="border">
+            <div class="row">slot2Time</div>
+            <div class="row ">
+              <div class="col-sm-4">name of interviewer</div>
+              <div class="col-sm-4"><input type="text" class="form-control" placeholder="no. of interviews taken"></div>
+              <div class="col-sm-4"><button type="button" class="btn btn-primary">approve</button></div>
+  
+            </div>
+            <div class="row ">
+                <div class="col-sm-4">name of interviewer</div>
+                <div class="col-sm-4"><input type="text" class="form-control" placeholder="no. of interviews taken"></div>
+                <div class="col-sm-4"><button type="button" class="btn btn-primary">approve</button></div>
+    
+              </div>
+
+      </div> -->
+            <div class="row"> <button type="button" class="btn btn-primary">close event</button></div>
+          </div>
+
+
+      
+
+
+
+
+      <div class="col-lg-3"></div>
+    </div>
+
+
+   
+  </mat-tab>
+</mat-tab-group>

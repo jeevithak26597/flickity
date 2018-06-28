@@ -1,0 +1,29 @@
+
+<div id="widthheight">
+<form [formGroup]="idformgroup">
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" placeholder="Email" formControlName="mailid">
+    </div>
+  </div>
+  <div class="form-group-row"><span *ngIf="idformgroup.get('mailid').touched && idformgroup.get('mailid').errors">Please provide valid Mail</span>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary" id="Adminsignin"><a routerLink="/admin">Admin Signin</a></button>
+      <button type="submit" class="btn btn-primary" id="Interviewersignin"><a routerLink="/interviewer">Interviewer Signin</a></button>
+      <button type="submit" class="btn btn-primary" id="registeradmin"><a routerLink="/register">Admin Register</a></button>
+      <button type="submit" class="btn btn-primary" id="registerinterviewer"><a routerLink="/interviewerregister">Interviewer Register</a></button>
+    </div>
+  </div>
+</form>
+</div>
+
