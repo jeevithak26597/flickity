@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,AbstractControl,ValidationErrors,Validators } from '@angular/forms';
 import { Http } from '@angular/http';
 import {EventModel} from '../../../commonislot/newmodel/events';
+import { EventService } from "../../event.service";
 @Component({
   selector: 'app-event-creation',
   templateUrl: './event-creation.component.html',
-  styleUrls: ['./event-creation.component.css']
+  styleUrls: ['./event-creation.component.css'],
+  providers:[EventService],
 })
 export class EventCreationComponent implements OnInit {
   regFormGroup: FormGroup;
@@ -15,19 +17,33 @@ export class EventCreationComponent implements OnInit {
   starttime:string;
   endtime:string;
   location:string;
-  skill:Array<string>=["json","angular"];
-  constructor(private httpService: Http) {
+  skill:string;
+  availableSkills;
+  
+  availableLocations;
+  constructor(private httpService: Http,public service:EventService) {
+    
+    this.service.fetchLocation();
+    
+    
+    this.service.fetchSkills();
+    
+    this.availableSkills=this.service.skillArr;
+    this.availableLocations=this.service.locArr;
+    console.log(this.service.locArr);
+   // console.log(this.service.skills);
     this.regFormGroup = new FormGroup({
       eventName: new FormControl('', Validators.required),
       date: new FormControl('',Validators.required),
       starttime: new FormControl('',Validators.required),
       endtime: new FormControl('',Validators.required),
-      location: new FormControl('chennai', Validators.required),
-      //skill: new FormControl('Angular', Validators.required),
+      location: new FormControl('', Validators.required),
+      skill: new FormControl('', Validators.required),
     })
   }
 
   ngOnInit() {
+   
   }
   check(date1 : Date)
   { 
@@ -42,10 +58,10 @@ export class EventCreationComponent implements OnInit {
 
 
   onCreateEvent() {
-    console.log(this.regFormGroup.value);
-    console.log(this.regFormGroup.value.eventName);
-    var eventObj=new EventModel(this.regFormGroup.value.eventName,this.regFormGroup.value.date,this.regFormGroup.value.starttime,this.regFormGroup.value.endtime,3,this.regFormGroup.value.location,this.skill);
-   console.log(eventObj);
+   // console.log(this.regFormGroup.value);
+    //console.log(this.regFormGroup.value.eventName);
+    var eventObj=new EventModel(this.regFormGroup.value.eventName,this.regFormGroup.value.date,this.regFormGroup.value.starttime,this.regFormGroup.value.endtime,3,this.regFormGroup.value.location,this.regFormGroup.value.skill);
+ // console.log(eventObj);
    
     const postData = {
 
@@ -54,12 +70,10 @@ export class EventCreationComponent implements OnInit {
     this.httpService.post(url, JSON.stringify(eventObj))
       .subscribe(rsp => console.log(rsp));
 
-    console.log('Posted');
+    console.log(JSON.stringify(eventObj));
  
   }
 
 
 }
-
-
 
