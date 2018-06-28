@@ -76,14 +76,21 @@
       </div>
     </div>
     <br>
-    <label for="Employeeid" class="col-sm-2 col-form-label">Skills</label>
-    <div *ngFor="let key of dataArr">
-   <div class="row" id="skills">
+    <div class="row">
+    <label for="Employeeid" class="col-sm-2 col-form-label">Skills required</label>
+    <div *ngFor="let key of dataArr" id="skills">
     
-      <input type="ckeckbox" id="reduce">{{key}}
-     
-   </div>
+      {{key}}
+    </div>
   </div>
+  <!-- <div class=" row" id="skilldetails">
+      <label for="skill" class="col-sm-2 col-form-label">Skills</label>
+      <div class="col-sm-10">
+        <select class="form-control"> 
+                  <option *ngFor="let key of dataArrr">{{key}}</option>
+        </select>
+        </div> -->
+
     <div class=" row">
       <div class="col-sm-10">
           

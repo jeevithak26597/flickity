@@ -14,6 +14,7 @@ export class ServiceregisterService {
 
     return this.httpService.post('https://islot-34ffe.firebaseio.com/newusers.json', user);
 
+
   }
 
   fetchdata() {

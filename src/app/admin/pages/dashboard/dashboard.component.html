@@ -6,9 +6,10 @@
     <div id="recentevent" >
     <div>
     <h3>Recent Events</h3>
-    <div class="col-md-3" id=recentid>
-    <span *ngFor="let event of recentevents"  (click)="details(event)">
-    <div class="square-service-block" >
+    <div class="col-md-3" id="recentid">
+    <span *ngFor="let event of recentevents;let i=index"  (click)="details(event)">
+        <div *ngIf="i<5">
+    <div class="square-service-block" id="changeheight" >
         <a href="/admin/eventdisplay">
           <!-- <h4 class="ssb-title" id=recenttitleid>{{event.name}}</h4>  
           <h4 class="ssb-title" id=recenttitleid>{{event.startTime}}</h4>   -->
@@ -16,6 +17,7 @@
           <!-- <app-eventtile *ngFor="let dayInfo of EventService.dayTileList" [dayTileInfo]="dayInfo"></app-eventtile> -->
         </a>
      </div>
+    </div>
     </span>
     </div>
     </div>

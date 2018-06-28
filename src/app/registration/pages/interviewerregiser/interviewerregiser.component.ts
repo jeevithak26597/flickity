@@ -14,15 +14,17 @@ export class InterviewerregiserComponent implements OnInit {
   idformgroup:FormGroup;
   dataArr;
   data;
+  skills;
   constructor(private service:ServiceregisterService) {
     this.dataArr=[];
+    this.skills=[];
     this.service.fetchdata().subscribe((rsp)=>{
       this.data=rsp.json();
       for(let key in this.data){
      
        this.dataArr.push(this.data[key].skill)
       }
-     console.log(this.dataArr)
+  
      });
   
     this.idformgroup=new FormGroup({
@@ -32,7 +34,8 @@ export class InterviewerregiserComponent implements OnInit {
       phonenumber:new FormControl('',Validators.required),
       location:new FormControl(''),
       employeeid:new FormControl('',[Validators.required, Validators.pattern(/^8[0-9]{6}$/)]),
-      role:new FormControl('')
+      role:new FormControl(''),
+      skills:new FormControl('')
     })
 
    }
@@ -48,13 +51,12 @@ export class InterviewerregiserComponent implements OnInit {
          const password=this.idformgroup.get('password').value;
          const location=this.idformgroup.get('location').value;
          const employeeid=this.idformgroup.get('employeeid').value;
-         const role=this.idformgroup.get('role').value;
-      // var userobject=new User( 10,"ram","abc@gmail.com",999999999,"admin","chennai",[]);  \
+          
+       // var userobject=new User( 10,"ram","abc@gmail.com",999999999,"admin","chennai",[]);  \
           
         
           
-
-       const userModel:UserModel = new UserModel(employeeid,name,mailid,phonenumber,"interviewer",location,[],password);
+       const userModel:UserModel = new UserModel(employeeid,name,mailid,phonenumber,"interviewer",location,this.dataArr,password);
       
     console.log(JSON.stringify(userModel))
     this.service.newuser(JSON.stringify(userModel))
