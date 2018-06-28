@@ -13,10 +13,12 @@ export class EventService {
   recentevent;
   edate;
   day;
+  users;
   skills;
   locations;
   skillArr;
   locArr;
+  usrArr;
   particulareventdata;
   constructor(private httpservice: Http) {
     this.upcomingevent = [];
@@ -25,6 +27,8 @@ export class EventService {
     this.locations;
     this.skillArr=[];
    this.locArr=[];
+   this.users;
+   this.usrArr=[];
   }
   setCurrentObj(obj,key){
     currentObj = obj;
@@ -86,6 +90,18 @@ export class EventService {
             for(var key in this.locations){
              // console.log(this.data[key]);
               this.locArr.push(this.locations[key]);
+            }
+        });
+  }
+  fetchUser(){
+    const url='https://chandanaisot.firebaseio.com/users.json';
+    this.httpservice.get(url)
+        .subscribe((rsp)=>{
+            this.users=rsp.json();
+            for(var key in this.users){
+              this.users[key]["key"]=key;
+             // console.log(this.data[key]);
+              this.usrArr.push(this.users[key]);
             }
         });
   }
