@@ -1,4 +1,5 @@
-<!-- <div class="cointainer">
+
+<<!-- <div class="cointainer">
     <div class="col-sm-6">
     <div class="row">
 
@@ -47,42 +48,81 @@
 </div>
 </div >
 </div>-->
-
-        <div class="col-sm-7">
-            <h2><b>Recent events</b></h2>
-            <div class="row">
-                <div><button type=button id="uce1" ></button><br>
-                    <h6>event</h6>
-                </div>
+<div class="interviewevents">
+    <div >
+        <div  class="interevent" >
+          <div>
+                <h2><b style="    margin-left: -124px;">Recent events</b></h2>
             </div>
-            <h2><b>Upcoming events</b></h2>
-            <div class="row">
-                <div><button type=button id="uce1" (click)="redirect()"></button><br>
-                    <h6>event</h6>
+                <div class="col-md-3" id="recentid"  *ngFor="let events of recentevents;let i=index">
+                        <!-- //<span (click)="details(event)"> -->
+                          <div *ngIf="i<4">     
+                        <div class="square-service-block" >
+                            <a href="/admin/eventdisplay" > 
+                              <!-- <!-- <h4 class="ssb-title" id=recenttitleid>{{event.name}}</h4>   -->
+                              <!-- <h4 class="ssb-title" id=recenttitleid>angular</h4>   -->
+                               <app-eventtile [eventInfo]="events" ></app-eventtile>
+                              <!-- <app-eventtile *ngFor="let dayInfo of EventService.dayTileList" [dayTileInfo]="dayInfo"></app-eventtile> -->
+                            </a>
+                         </div>
+                       
+                        
                 </div>
+          
+            </div>
+    </div>
+        <div class="upevent">
+               <div> <h2><b style="    margin-left: -88%;">Upcoming events</b></h2></div>
+                <div class="col-md-3" id=upcommingid *ngFor="let events of upevents;let i=index">
+                        <!-- <span  (click)="details(event)"> -->
+                            <div *ngIf="i<4">
+                                <div class="square-service-block">
+                                    <a href="/interviewer/event-enrollment">
+                                       <h4 class="ssb-title" id=upcommingtitleid></h4>  
+                                      <!-- <h4 class="ssb-title" id=upcommingtitleid>{{event.starttime}}</h4>   -->
+                                      <app-eventtile [eventInfo]="events"></app-eventtile>
+                                    </a>
+                                 </div>
+                        <!-- </span>  -->
+                                </div>
+                                </div>
             </div>
         </div>
-        <div class="col-sm-5">
-            <div id="score">
-                <div id=a>
-                    <div class="glyphicon glyphicon-flash"></div>
-                    <div>
-                        <h3>points so far...
-                        </h3>
-                            </div>
+        <div class="interevent1">
+    
+                <div id="score">
+                    <div id=a>
+                        <div class="glyphicon glyphicon-flash"></div>
+                        <div>
+                            <h3>points so far...
+                            </h3>
+                                </div>
+                    </div>
+    
+                    <div class="row row1">
+    
+                        <div class="col-sm-2"><span><h3>Total</h3></span></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-2"><span><h3>This month</h3></span></div>
+                    </div>
+                    <div class="row row2">
+                        <div class="col-sm-2">129</div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-2">487</div>
+                    </div>
                 </div>
-
-                <div class="row row1">
-
-                    <div class="col-sm-2"><span><h3>Total</h3></span></div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-2"><span><h3>This month</h3></span></div>
-                </div>
-                <div class="row row2">
-                    <div class="col-sm-2">129</div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-2">487</div>
-                </div>
-            </div>
+        
         </div>
+    </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+      <link rel="icon" type="image/x-icon" href="favicon.ico">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     

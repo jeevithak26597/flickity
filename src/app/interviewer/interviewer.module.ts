@@ -4,6 +4,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { EventEnrollmentComponent } from './pages/event-enrollment/event-enrollment.component';
 import { InterviewerRoutingModule } from './interviewer-routing/interviewer-routing.module';
 import { Routes, RouterModule } from "@angular/router";
+import { InterviwerserviceService } from "./interviwerservice.service";
+import { EventtileComponent } from '../commonislot/pages/eventtile/eventtile.component';
+import { CommonislotModule } from "../commonislot/commonislot.module";
 // import {Skill} from '../commonislot/classes/Skill';
 // import {Events} from '../commonislot/classes/Events';
 // import {Locations} from '../commonislot/classes/Location';
@@ -16,12 +19,14 @@ const introutes: Routes = [
   imports: [
     CommonModule,
     InterviewerRoutingModule,
+    CommonislotModule, 
     // Events,
     // Skill,
     // Locations,
     // User,
     RouterModule.forChild(introutes)
   ],
+  providers:[InterviwerserviceService],
   declarations: [DashboardComponent, EventEnrollmentComponent]
 })
 export class InterviewerModule { }

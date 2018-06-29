@@ -1,0 +1,140 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+.container {
+    width: 632px;
+    height: 600px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0px 0px 8px grey;
+    background-color: white;
+}
+.skilllocation{
+    display: flex;
+}
+.imgcreation{
+    margin-top: 25px;
+}
+
+#locationmanagement{
+    width: 1000px;
+    height: 600px;
+    margin: 100px;
+    margin-top: 30px;
+    padding: 20px;
+    box-shadow: 0px 0px 8px grey;
+    background-color: white;
+}
+.addskill{
+    display: flex;
+}
+#addedskill{
+    width: 800px;
+    height: 250px;
+    margin-left: 70px;
+    padding: 20px;
+    box-shadow: 0px 0px 8px grey;
+    background-color: white;
+    display: flex;
+}
+
+.eventCreation
+{
+    margin-top: 30px;
+}
+
+.recentandcreation a{
+    display: flex;
+    margin-right: 20px;
+}
+#events{
+    width: 1000px;
+    height: 600px;
+    margin-left: 160px;
+    margin-top: 30px;
+    padding: 20px;
+    box-shadow: 0px 0px 2px grey;
+    background-color: white;
+}
+#recentevent {
+    width: 800px;
+    height: 250px;
+    margin-top: 80px;
+    margin-left: 20px;
+    padding: 20px;
+    background-color: white;
+    display: flex;
+}
+#upcommingevent {
+    width: 800px;
+    height: 250px;
+    margin-top: -85px;
+    margin-left: 20px;
+    padding: 20px;
+    background-color: white;
+}
+a:hover, a:focus {
+    color: #2a6496;
+    text-decoration: none;
+  }
+.square-service-block{
+	position:relative;
+	overflow:hidden;
+    padding-left: inherit;
+    }
+.square-service-block a {
+        background-color:#FB9292;
+        border-radius: 10px;
+        display: block;
+        border: 2px #393838;
+        padding: 20px 20px;
+        text-align: center;
+      }
+.square-service-block a:hover{
+        background-color: rgba(149, 143, 142, 0.80);
+      }
+.h4.ssb-title {
+        color: #fff;
+        font-size: 12px;
+        margin: 0;
+        padding:0;
+        text-transform: uppercase;
+      } 
+      #recentid{
+          display: flex;
+          padding: 10px;
+          width: 855px;
+          height: 150px;
+          margin-top: 10px;
+          justify-content: space-around;
+      }
+      #recenttitleid{
+       text-align: center;
+      }
+      #upcommingtitleid{
+        margin-top: 10px;
+      }
+      #upcommingid{
+     margin-top: 22px;
+     display: flex;
+     padding: 10px;
+     width: 800px;
+     height: 150px;
+     margin-top: 10px;
+     justify-content: space-around;
+     }
+     fieldset{
+        display: block;
+        /* margin-left: 450px;
+        margin-right: 200px; */
+        /* padding-top: 0.35em;
+        padding-bottom:0.625em; */
+        padding-left: 3em;
+        padding-right: 9.75em;
+        border:2px solid;
+        color:black; 
+    }
+    legend{
+        color:black;
+        border-bottom: none;
+        width: 55%;
+   }

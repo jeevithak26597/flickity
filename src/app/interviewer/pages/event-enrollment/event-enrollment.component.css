@@ -168,7 +168,10 @@ div#box3{
     margin-top: 20px;
     text-align: center;
 }*/
-.main-containere {
+.entroll{
+    margin-bottom: 50px;
+}
+.main-container {
     width: 1000px;
     height: 700px;
     margin: auto;

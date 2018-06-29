@@ -9,7 +9,7 @@ import { CommonServiceService } from '../../../common-service.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers:[ServiceregisterService],
+  providers:[ServiceregisterService,CommonServiceService],
 })
 export class LoginComponent implements OnInit {
   idformgroup:FormGroup;
