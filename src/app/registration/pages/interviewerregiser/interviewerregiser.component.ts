@@ -4,6 +4,7 @@ import { ValidationErrors } from '@angular/forms';
 import { ServiceregisterService } from "../../serviceregister.service";
 import {FormsModule} from '@angular/forms';
 import {UserModel} from '../../../commonislot/newmodel/user';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-interviewerregiser',
@@ -15,18 +16,14 @@ export class InterviewerregiserComponent implements OnInit {
   dataArr;
   data;
   skills;
-  constructor(private service:ServiceregisterService) {
+  router;
+  constructor(private service:ServiceregisterService,public r:Router) {
+    this.router=r;
     this.dataArr=[];
     this.skills=[];
-    this.service.fetchdata().subscribe((rsp)=>{
-      this.data=rsp.json();
-      for(let key in this.data){
+    this.service.fetchSkills();
      
-       this.dataArr.push(this.data[key].skill)
-      }
-  
-     });
-  
+  this.dataArr=this.service.skillArr;
     this.idformgroup=new FormGroup({
       mailid:new FormControl('',[Validators.required,Validators.pattern(/^([A-Za-z0-9_\-\.])+\@([virtusa|VIRTUSA])+\.(com)$/)]),
       name:new FormControl('',Validators.required),
@@ -64,6 +61,7 @@ export class InterviewerregiserComponent implements OnInit {
           (Response)=>console.log(Response),
           (Error)=>console.log(Error)
     )
+    this.router.navigate(['login']);
 
   }
   

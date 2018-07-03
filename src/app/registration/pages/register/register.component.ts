@@ -4,6 +4,7 @@ import { ValidationErrors } from '@angular/forms';
 import { ServiceregisterService } from "../../serviceregister.service";
 import {FormsModule} from '@angular/forms';
 import {UserModel} from '../../../commonislot/newmodel/user';
+import { Router } from "@angular/router";
 
 
 
@@ -13,11 +14,12 @@ import {UserModel} from '../../../commonislot/newmodel/user';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  
+  router;
     idformgroup:FormGroup;
     dataArr;
     data;
-  constructor(private service:ServiceregisterService) { 
+  constructor(private service:ServiceregisterService,public r:Router) { 
+    this.router=r;
     this.dataArr=[];
     this.idformgroup=new FormGroup({
       mailid:new FormControl('',[Validators.required,Validators.pattern(/^([A-Za-z0-9_\-\.])+\@([virtusa|VIRTUSA])+\.(com)$/)]),
@@ -66,7 +68,7 @@ export class RegisterComponent implements OnInit {
           (Response)=>console.log(Response),
           (Error)=>console.log(Error)
     )
-
+    this.router.navigate(['login']);
   }
   
    ngOnInit() {

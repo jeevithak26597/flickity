@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 
 @Injectable()
 export class InterviwerserviceService {
-url='https://project-islot.firebaseio.com/events.json';
+url='https://chandanaisot.firebaseio.com/events.json';
 data;
 timeslot;
 skill; 

@@ -6,7 +6,8 @@ export class ServiceregisterService {
   skillArr:any;
   users;
   usrArr;
-  url = `https://islot-34ffe.firebaseio.com/skills.json`;
+  skills;
+  url = `https://chandanaisot.firebaseio.com/skills.json`;
 
   constructor(private httpService: Http ) {
     this.skillArr= [];
@@ -15,9 +16,21 @@ export class ServiceregisterService {
   }
   newuser(user) {
 
-    return this.httpService.post('https://islot-34ffe.firebaseio.com/newusers.json', user);
+    return this.httpService.post('https://chandanaisot.firebaseio.com/users.json', user);
 
 
+  }
+  fetchSkills(){
+    const url='https://chandanaisot.firebaseio.com/skills.json';
+         this.httpService.get(url)
+        .subscribe((rsp)=>{
+            this.skills=rsp.json();
+            for(var key in this.skills){
+             // console.log(this.data[key]);
+              this.skillArr.push(this.skills[key]);
+            }
+           
+        });
   }
   fetchUser(){
     const url='https://chandanaisot.firebaseio.com/users.json';
