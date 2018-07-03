@@ -3,6 +3,7 @@ import { FormControl,FormGroup,AbstractControl,ValidationErrors,Validators } fro
 import { Http } from '@angular/http';
 import {EventModel} from '../../../commonislot/newmodel/events';
 import { EventService } from "../../event.service";
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-event-creation',
   templateUrl: './event-creation.component.html',
@@ -19,10 +20,10 @@ export class EventCreationComponent implements OnInit {
   location:string;
   skill:string;
   availableSkills;
-  
+  router;
   availableLocations;
-  constructor(private httpService: Http,public service:EventService) {
-    
+  constructor(private httpService: Http,public service:EventService,public r:Router) {
+    this.router=r;
     this.service.fetchLocation();
     
     
@@ -66,12 +67,12 @@ export class EventCreationComponent implements OnInit {
     const postData = {
 
     }
-    const url = 'https://islot-34ffe.firebaseio.com/finalevents.json';
+    const url = 'https://chandanaisot.firebaseio.com/events.json';
     this.httpService.post(url, JSON.stringify(eventObj))
       .subscribe(rsp => console.log(rsp));
 
     console.log(JSON.stringify(eventObj));
- 
+ this.router.navigate(['admin/dashboard']);
   }
 
 

@@ -42,8 +42,8 @@ intercount;
   closeEvent(){
 
   let key=this.eventService.getCurrentKey;
-  var url='https://islot-34ffe.firebaseio.com/events';
-  var urlUser='https://islot-34ffe.firebaseio.com/users';
+  var url='https://chandanaisot.firebaseio.com/events.json';
+  var urlUser='https://chandanaisot.firebaseio.com/users.json';
   console.log(JSON.stringify({slots:this.slotData}));
   this.httpService.patch(url+"/"+key+".json",JSON.stringify({
     slots: this.slotData

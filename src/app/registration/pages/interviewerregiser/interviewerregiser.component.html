@@ -78,10 +78,11 @@
     <br>
     <div class="row">
     <label for="Employeeid" class="col-sm-2 col-form-label">Skills required</label>
-    <div *ngFor="let key of dataArr" id="skills">
-    
-      {{key}}
-    </div>
+    <select name="skill" class="form-control" formControlName="skill" id="skill">
+      <option *ngFor="let skill of dataArr" value= {{skill.name}}>
+        {{skill.name}}
+      </option>
+    </select>
   </div>
   <!-- <div class=" row" id="skilldetails">
       <label for="skill" class="col-sm-2 col-form-label">Skills</label>

@@ -31,11 +31,11 @@ login(){
         this.commonser.setUser(this.service.usrArr[i].key);
          if(this.service.usrArr[i].role=="admin"){
           
-           this.router.navigate(['admin/dashboard']);
+           this.router.navigate(['admin']);
            
          }
          else{
-           this.router.navigate(['interviewer/dashboard']);
+           this.router.navigate(['interviewer']);
          }
        }
      }

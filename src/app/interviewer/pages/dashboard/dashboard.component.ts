@@ -26,7 +26,7 @@ today = new Date();
   
 
   ngOnInit() {
-    var url='https://islot-34ffe.firebaseio.com/finalevents.json';
+    var url='https://chandanaisot.firebaseio.com/events.json';
     this.data=[];
     this.keys=[];
     this.recentevents=[];
