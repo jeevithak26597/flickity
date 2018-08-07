@@ -5,9 +5,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { RouterModule } from "@angular/router";
 import {HttpModule} from '@angular/http';
+import { LandingPagesComponent } from './landing-pages/landing-pages.component';
+import { TileComponent } from './tile/tile.component';
 @NgModule({
   declarations: [
     AppComponent,
+    LandingPagesComponent,
+    TileComponent,
   
   ],
   imports: [
