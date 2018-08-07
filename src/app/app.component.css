@@ -16,7 +16,28 @@ body { font-family: sans-serif; }
   border-radius: 5px;
   counter-increment: carousel-cell;
 }
+.carousel-cell { width: 20%; }
 
+@media ( min-width: 320px ) {
+  /* tablet size, 3 cells in grou
+p */
+  .carousel-cell { width: 45%; }
+}
+@media ( min-width: 768px ) {
+  /* tablet size, 3 cells in grou
+p */
+  .carousel-cell { width: 25%; }
+}
+
+@media ( min-width: 1024px ) {
+ 
+  .carousel-cell { width: 23%; }
+}
+
+@media ( min-width: 1200px ) {
+   
+    .carousel-cell { width: 18%; }
+  }
 .carousel-cell.is-selected {
   background: #ED2;
 }
