@@ -7,6 +7,7 @@ import { RouterModule } from "@angular/router";
 import {HttpModule} from '@angular/http';
 import { LandingPagesComponent } from './landing-pages/landing-pages.component';
 import { TileComponent } from './tile/tile.component';
+import { CommonService } from './common.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,7 @@ import { TileComponent } from './tile/tile.component';
     HttpModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
