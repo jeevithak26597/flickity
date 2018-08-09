@@ -8,6 +8,8 @@ import {HttpModule} from '@angular/http';
 import { LandingPagesComponent } from './landing-pages/landing-pages.component';
 import { TileComponent } from './tile/tile.component';
 import { CommonService } from './common.service';
+import { HttpClientModule } from "@angular/common/http";
+import {  JsonpModule } from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import { CommonService } from './common.service';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpModule,
-    FormsModule
+    HttpClientModule,
+    FormsModule,
+    JsonpModule
   ],
   providers: [CommonService],
   bootstrap: [AppComponent]

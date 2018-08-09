@@ -21,11 +21,11 @@ body { font-family: sans-serif; }
   .carousel-cell { width: 45%; }
 }
 @media ( min-width: 768px ) {
-  .carousel-cell { width: 25%; }
+  .carousel-cell { width: 23%; }
 }
 
 @media ( min-width: 1024px ) {
-  .carousel-cell { width: 23%; }
+  .carousel-cell { width: 20%; }
 }
 
 @media ( min-width: 1200px ) {
